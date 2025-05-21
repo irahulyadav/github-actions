@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Gihtub Actions"
 include(":app")
- 
+include(":wearapp")
