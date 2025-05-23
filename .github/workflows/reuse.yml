@@ -10,8 +10,23 @@ jobs:
       where-to-greet: '@Stockholm'
     secrets: inherit # if the reusable workflow uses secrets
 
+  octocat-in-delhi:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      who-to-greet: '@octocat'
+      where-to-greet: '@Delhi'
+    secrets: inherit # if the reusable workflow uses secrets
+
   use-output:
     runs-on: ubuntu-latest
     needs: octocat-in-stockholm
     steps:
       - run: echo "Time was ${{ needs.octocat-in-stockholm.outputs.current-time }}"
+
+  use-output2:
+    runs-on: ubuntu-latest
+    needs: octocat-in-delhi
+    steps:
+      - run: echo "Time was ${{ needs.octocat-in-delhi.outputs.current-time }}"
+
+
