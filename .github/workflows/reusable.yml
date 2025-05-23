@@ -8,6 +8,11 @@ on:
         type: string
         required: true
         default: World
+      where-to-greet:
+        description: 'The person to greet'
+        type: string
+        required: true
+        default: NoWhere
     outputs:
       current-time:
         description: 'The time when greeting.'
